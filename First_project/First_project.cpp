@@ -2,10 +2,25 @@
 //
 
 #include <iostream>
+#include <ctime>;
 using namespace std;
 
-void main()
+int Fact(int N)
 {
+	if (N == 0) return 0;
+	if (N == 1) return 1;
+	return N * Fact(N - 1);
+}
+
+int main()
+{
+	// Factorial
+
+	cout << "Factorial = " << Fact(5) << endl;
+
+
+
+
 	/*int a = 10;
 	cout << a << endl;
 
@@ -100,27 +115,108 @@ void main()
 
 
 	//HW #5
-	int rangeStart;
-	int rangeEnd;
-	int result = 0;
+	//int rangeStart;
+	//int rangeEnd;
+	//int result = 0;
 
-	cout << "Write number of range start" << endl;
-	cin >> rangeStart;
+	//cout << "Write number of range start" << endl;
+	//cin >> rangeStart;
 
-	cout << "Write number of range end" << endl;
-	cin >> rangeEnd;
+	//cout << "Write number of range end" << endl;
+	//cin >> rangeEnd;
 
-	while (rangeStart <= rangeEnd)
-	{
-		if (rangeStart %2 != 0)
-		{
-			result += rangeStart;
-		}
-		rangeStart++;
-	}
-	cout << "\nResult = " << result << endl;
+	//while (rangeStart <= rangeEnd)
+	//{
+	//	if (rangeStart %2 != 0)
+	//	{
+	//		result += rangeStart;
+	//	}
+	//	rangeStart++;
+	//}
+	//cout << "\nResult = " << result << endl;
 
 
+	//Try continue
+	//for (size_t i = 1; i < 5; i++)
+	//{
+	//	if (i == 2)
+	//	{
+	//		continue;
+	//	}
+	//	cout << "#" << i << endl;
+	//}
+
+
+	//HW #6
+	//int count = 10;
+
+	//for (int i = 1; i < count; i++)
+	//{
+	//	for (int j = 0; j < count-1; j++)
+	//	{
+	//		cout << " ";
+	//	}
+	//
+	//	for (int j = 5; j > 0; j--)
+	//	{
+	//		cout << "*";
+	//	}
+
+	//	cout << "\n";
+	//}
+
+
+	//int arr[7]{};
+
+	//cout << sizeof(arr)/sizeof(arr[0]) << endl;
+	//cout << arr[0] << endl;
+
+
+
+
+
+	// HW #7 working with array
+	//srand((unsigned int)time(NULL));
+	//int const SIZE = 10;
+	//int MyArray[SIZE]{};
+	//bool exist;
+
+	//for (int i = 0; i < SIZE;)
+	//{
+	//	exist = false;
+	//	int newValue = rand() % 20;
+	//	//make checks of all elements of array
+	//	for (int j = 0; j < i; j++)
+	//	{
+	//		if (MyArray[j] == newValue)
+	//		{
+	//			exist = true;
+	//			break;
+	//		}
+	//	}
+
+	//	if (exist==false)
+	//	{
+	//		MyArray[i] = newValue;
+	//		i++;
+	//	}
+	//}
+	//for (int i = 0; i < SIZE; i++)
+	//{
+	//	cout << MyArray[i] << endl;
+	//}
+
+	//int min = MyArray[0];
+	//for (int i = 0; i < SIZE; i++)
+	//{
+	//	if (MyArray[i] < min)
+	//	{
+	//		min = MyArray[i];
+	//		
+	//	}
+	//	// << min << endl;
+	//}
+	//cout << "Min value in array = "<< min << endl;
 
 }
 
