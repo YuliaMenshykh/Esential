@@ -5,20 +5,40 @@
 #include <ctime>;
 using namespace std;
 
-int Fact(int N)
+//int Fact(int N)
+//{
+//	if (N == 0) return 0;
+//	if (N == 1) return 1;
+//	return N * Fact(N - 1);
+//}
+
+//void Foo(int *pa)
+//{
+//	(*pa)++;
+//}
+
+
+void Foo(int *pa, int *pb)
 {
-	if (N == 0) return 0;
-	if (N == 1) return 1;
-	return N * Fact(N - 1);
+	int a = *pa;
+	*pa = *pb;
+	*pb = a;
 }
 
 int main()
 {
 	// Factorial
+	//cout << "Factorial = " << Fact(5) << endl;
 
-	cout << "Factorial = " << Fact(5) << endl;
+	int a = 2;
+	int b = 5;
+	cout << a << endl;
+	cout << b << endl;
 
+	Foo(&a, &b);
 
+	cout << a << endl;
+	cout << b << endl;
 
 
 	/*int a = 10;
@@ -218,6 +238,8 @@ int main()
 	//}
 	//cout << "Min value in array = "<< min << endl;
 
+
+	
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
