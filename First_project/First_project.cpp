@@ -5,6 +5,7 @@
 #include <ctime>;
 using namespace std;
 
+// Factorial
 //int Fact(int N)
 //{
 //	if (N == 0) return 0;
@@ -12,33 +13,96 @@ using namespace std;
 //	return N * Fact(N - 1);
 //}
 
+
+// Work with pointers
 //void Foo(int *pa)
 //{
 //	(*pa)++;
 //}
 
 
-void Foo(int *pa, int *pb)
-{
-	int a = *pa;
-	*pa = *pb;
-	*pb = a;
-}
+// Function wich aaccepts diferent type of variables
+//template <typename T>
+//void Foo(T &a, T &b)
+//{
+//	T res = a;
+//	a = b;
+//	b = res;
+//}
 
 int main()
 {
 	// Factorial
+	// 
 	//cout << "Factorial = " << Fact(5) << endl;
 
-	int a = 2;
-	int b = 5;
-	cout << a << endl;
-	cout << b << endl;
 
-	Foo(&a, &b);
 
-	cout << a << endl;
-	cout << b << endl;
+	// Work with dynamic array
+	// 
+	//int size = 5;
+	//int *arr = new int[size];
+
+	//for (int i = 0; i < size; i++)
+	//{
+	//	arr[i] = rand() % 10;
+	//	cout << arr[i] << "\t";
+	//	cout << arr + i << endl;
+	//}
+	//delete [] arr;
+
+
+
+
+	// Work with two-dimensional array
+	int rows;
+	int columns;
+	cout << "Write rows count" << endl;
+	cin >> rows;
+	cout << "Write colums count" << endl;
+	cin >> columns;
+	// creating two-dimensional array 
+	int **arr = new int* [rows];
+	for (int i = 0; i < rows; i++)
+	{
+		arr[i] = new int[columns];
+	}
+	// fulling array
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < columns; j++)
+		{
+			arr[i][j] = rand() % 20;
+			cout << arr[i][j] << "\t";
+		}
+		cout << endl;
+	}
+	// clear all of that
+	for (int i = 0; i < rows; i++)
+	{
+		delete[] arr[i];
+	}
+	delete[] arr;
+
+
+
+
+
+
+
+
+
+
+	// Function wich aaccepts diferent type of variables
+	// 
+	//double a = 2.7;
+	//double b = 5.4;
+	//cout << a << endl;
+	//cout << b << endl;
+	//Foo(a, b);
+	//cout << a << endl;
+	//cout << b << endl;
+
 
 
 	/*int a = 10;
@@ -48,6 +112,7 @@ int main()
 
 
 	//HW #1
+	// 
 	//int Var, Var2;
 	//cout << "Write two numbers" << endl;
 	//cin >> Var >> Var2;
@@ -56,6 +121,7 @@ int main()
 	//cout << "Average number = " << (double)(Var + Var2)/2 << endl;
 
 	//HW #2
+	// 
 	//int myNumber;
 	//cout << "Write a number" << endl;
 	//cin >> myNumber;
@@ -72,6 +138,7 @@ int main()
 
 
 	//HW #3 simple calculator
+	// 
 	//int Var, Var2;
 	//int res;
 	//cout << "Write two numbers" << endl;
@@ -97,6 +164,7 @@ int main()
 
 
 	//HW #4 line of symbols
+	// 
 	//char symbol;
 	//int position;
 	//int amount;
@@ -135,6 +203,7 @@ int main()
 
 
 	//HW #5
+	// 
 	//int rangeStart;
 	//int rangeEnd;
 	//int result = 0;
@@ -157,6 +226,7 @@ int main()
 
 
 	//Try continue
+	// 
 	//for (size_t i = 1; i < 5; i++)
 	//{
 	//	if (i == 2)
@@ -168,8 +238,8 @@ int main()
 
 
 	//HW #6
+	// 
 	//int count = 10;
-
 	//for (int i = 1; i < count; i++)
 	//{
 	//	for (int j = 0; j < count-1; j++)
@@ -186,8 +256,10 @@ int main()
 	//}
 
 
-	//int arr[7]{};
 
+	// Try array
+	// 
+	//int arr[7]{};
 	//cout << sizeof(arr)/sizeof(arr[0]) << endl;
 	//cout << arr[0] << endl;
 
