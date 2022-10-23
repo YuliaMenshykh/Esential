@@ -5,6 +5,38 @@
 #include <ctime>;
 using namespace std;
 
+
+////For test
+//void FillArray(int* const arr, const int size)
+//{
+//	for (size_t i = 0; i < size; i++)
+//	{
+//		arr[i] = rand() % 10;
+//	}
+//}
+//
+//void ShowArray(int* const arr, const int size)
+//{
+//	for (size_t i = 0; i < size; i++)
+//	{
+//		cout << arr[i] << "\t";
+//	}
+//}
+//void push_back(int *&arr, int &size,const int value)
+//{
+//	int *newArr = new int[size+1];
+//	for (int i = 0; i < size; i++)
+//	{
+//		newArr[i] = arr[i];
+//	}
+//	
+//	newArr[size] = value;
+//	size++;
+//	delete[]arr;
+//	arr = newArr;
+//
+//}
+
 // Factorial
 //int Fact(int N)
 //{
@@ -30,8 +62,172 @@ using namespace std;
 //	b = res;
 //}
 
+
+////"like Delegete"
+//string GetDataFromServer()
+//{
+//	return "This data from server";
+//}
+//string GetDataFromBD()
+//{
+//	return "This data from BD";
+//}
+//
+//void ShowInfo(string (*foo)())
+//{
+//	cout << foo() << endl;
+//}
+
+class Human
+{
+public:
+	int age;
+	int name;
+
+
+};
+
+
+class Point
+{
+public:
+	//int *arr;
+	int x;
+	int y;
+
+	Point()
+	{
+
+	}
+	Point(int valueX, int valueY)
+	{
+		x = valueX;
+		y = valueY;
+		cout << this <<"constructor" << endl;
+	}
+	bool operator == (const Point& other)
+	{
+		return this->x == other.x && this->y == other.y;
+	}
+	Point operator +(const Point &other)
+	{
+		Point temp;
+		temp.x = this->x + other.x;
+		temp.y = this->y + other.y;
+		return temp;
+	}
+
+
+	Point& operator ++()
+	{
+		this->x++;
+		this->y++;
+		return *this;
+	}
+	Point& operator ++(int value)
+	{
+		Point temp(*this);
+		this->x++;
+		this->y++;
+		return temp;
+	}
+};
+
+
 int main()
 {
+	////"like Delegete"
+	//ShowInfo(*GetDataFromBD);
+
+
+	//Point a(5,5);
+	//Point b(2, 1);
+	//bool res = a == b;
+	//cout << res << endl;
+	//Point c = a + b;
+
+	Point a(1,5);
+	Point b = a++;
+
+	int x = 10;
+	int const* p = &x;
+
+	////Copy array
+	//int size = 10;
+	//int* firstArray = new int[size];
+	//int* secondArray = new int[size];
+	//FillArray(firstArray, size);
+	//FillArray(secondArray, size);
+
+	//cout << "First array : \t";
+	//ShowArray(firstArray, size);
+	//cout << endl;
+	//cout << "Second array : \t";
+	//ShowArray(secondArray, size);
+	//cout << endl;
+
+	//delete[]firstArray;
+
+	//firstArray = new int[size];
+	//for (size_t i = 0; i < size; i++)
+	//{
+	//	firstArray[i] = secondArray[i];
+	//}
+	//cout << "First array : \t";
+	//ShowArray(firstArray, size);
+	//cout << endl;
+	//cout << "Second array : \t";
+	//ShowArray(secondArray, size);
+	//cout << endl;
+	//delete[]secondArray;
+	//delete[]firstArray;
+
+
+
+
+	////Using string
+	//string str1 = "Hello";
+	//string str2 = "World";
+	//string res;
+	//res = str1 + str2;
+	//cout << res << endl;
+
+
+	////ASCII
+	//// 0 -127 is static (char contains english)
+	//for (int i = 0; i < 255; i++)
+	//{
+	//	cout <<"Code = "<< i <<"char = "<< (char)i<< endl;
+	//}
+
+
+
+
+	//Add value in the end of array
+	//int size = 5;
+	//int *arr = new int[size];
+
+	//FillArray(arr, size);
+	//ShowArray(arr, size);
+	//cout << "\n==============\n";
+
+	//push_back(arr, size, 233);
+	//ShowArray(arr, size);
+
+
+	//delete[] arr;
+
+
+
+
+	//typecasting
+	//double a = 66.85;
+	//cout << (bool)a<< endl;
+	//cout << a << endl;
+
+
+
+
 	// Factorial
 	// 
 	//cout << "Factorial = " << Fact(5) << endl;
@@ -54,40 +250,35 @@ int main()
 
 
 
-	// Work with two-dimensional array
-	int rows;
-	int columns;
-	cout << "Write rows count" << endl;
-	cin >> rows;
-	cout << "Write colums count" << endl;
-	cin >> columns;
-	// creating two-dimensional array 
-	int **arr = new int* [rows];
-	for (int i = 0; i < rows; i++)
-	{
-		arr[i] = new int[columns];
-	}
-	// fulling array
-	for (int i = 0; i < rows; i++)
-	{
-		for (int j = 0; j < columns; j++)
-		{
-			arr[i][j] = rand() % 20;
-			cout << arr[i][j] << "\t";
-		}
-		cout << endl;
-	}
-	// clear all of that
-	for (int i = 0; i < rows; i++)
-	{
-		delete[] arr[i];
-	}
-	delete[] arr;
-
-
-
-
-
+	//// Work with two-dimensional array
+	//int rows;
+	//int columns;
+	//cout << "Write rows count" << endl;
+	//cin >> rows;
+	//cout << "Write colums count" << endl;
+	//cin >> columns;
+	//// creating two-dimensional array 
+	//int **arr = new int* [rows];
+	//for (int i = 0; i < rows; i++)
+	//{
+	//	arr[i] = new int[columns];
+	//}
+	//// fulling array
+	//for (int i = 0; i < rows; i++)
+	//{
+	//	for (int j = 0; j < columns; j++)
+	//	{
+	//		arr[i][j] = rand() % 20;
+	//		cout << arr[i][j] << "\t";
+	//	}
+	//	cout << endl;
+	//}
+	//// clear all of that
+	//for (int i = 0; i < rows; i++)
+	//{
+	//	delete[] arr[i];
+	//}
+	//delete[] arr;
 
 
 
