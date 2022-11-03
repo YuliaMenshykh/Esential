@@ -117,6 +117,7 @@ public:
 		return temp;
 	}
 
+	void Print();
 
 	Point& operator ++()
 	{
@@ -133,6 +134,11 @@ public:
 	}
 };
 
+void Point::Print()
+{
+	cout << this->x << endl;
+}
+
 
 int main()
 {
@@ -147,10 +153,11 @@ int main()
 	//Point c = a + b;
 
 	Point a(1,5);
-	Point b = a++;
+	//Point b = a++;
 
 	int x = 10;
 	int const* p = &x;
+	a.Print();
 
 	////Copy array
 	//int size = 10;
@@ -515,3 +522,5 @@ int main()
 //   4. Use the Error List window to view errors
 //   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
 //   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+
+
